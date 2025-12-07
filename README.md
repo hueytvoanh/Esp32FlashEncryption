@@ -12,6 +12,12 @@ pip install esptool
     python -m esptool --port COM4 read-flash 0 0x400000 flash_contents.bin
 <img width="852" height="258" alt="image" src="https://github.com/user-attachments/assets/d76c8f12-d627-4eba-8ae6-c14daeb3c962" />
 
+# IDF Extention
+<img width="862" height="703" alt="image" src="https://github.com/user-attachments/assets/c6be9444-1b5a-4f97-817a-36791d3bfc4a" />
+<img width="1210" height="644" alt="image" src="https://github.com/user-attachments/assets/43c16a41-9367-48e0-9d3c-7d84d529ef66" />
+
+
+
 
 
 
