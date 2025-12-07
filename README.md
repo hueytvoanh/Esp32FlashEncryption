@@ -8,6 +8,9 @@
 # EspTool
 pip install esptool
 <img width="1517" height="748" alt="image" src="https://github.com/user-attachments/assets/eb51c8e6-5836-4891-a6c9-aebc9134ee27" />
+    Đưa ESP32 vào chế độ download (boot mode) 
+<img width="852" height="258" alt="image" src="https://github.com/user-attachments/assets/d76c8f12-d627-4eba-8ae6-c14daeb3c962" />
+
 
 
 
