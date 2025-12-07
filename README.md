@@ -18,6 +18,7 @@ pip install esptool
 <img width="1396" height="320" alt="image" src="https://github.com/user-attachments/assets/6ad86044-2455-4d20-ab08-b67fc94aaffa" />
 
 # Bootloader Size Issue
+<img width="849" height="544" alt="image" src="https://github.com/user-attachments/assets/75d8f751-a053-4c51-8ab5-045c325c141a" />
 
 
 
