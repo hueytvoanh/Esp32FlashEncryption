@@ -20,6 +20,11 @@ pip install esptool
 # Bootloader Size Issue
 <img width="849" height="544" alt="image" src="https://github.com/user-attachments/assets/75d8f751-a053-4c51-8ab5-045c325c141a" />
 
+# Name, Type, SubType, Offset, Size, Flags
+nvs, data, nvs, 0x9000, 0x6000,  # 24 KB
+otadata, data, ota, 0xF000, 0x2000,  # 8 KB
+app0, app, factory, 0x10000, 0xD0000,  # 832 KB
+# You can add more partitions below as needed
 
 
 
