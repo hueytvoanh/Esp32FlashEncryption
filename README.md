@@ -28,6 +28,9 @@ Full Clean: idf.py fullclean
 <img width="753" height="117" alt="image" src="https://github.com/user-attachments/assets/67ffa942-fbfb-4c8f-987e-bfb77abb9f72" />
 Menuconfig: idf.py menuconfig
 <img width="873" height="347" alt="image" src="https://github.com/user-attachments/assets/5d674ea8-8a0b-4b91-b79c-2f11bf67d56e" />
+Set Target Chip
+<img width="1021" height="342" alt="image" src="https://github.com/user-attachments/assets/9adafeb9-6cea-48a9-bfe4-387233149a62" />
+
 
 
 
