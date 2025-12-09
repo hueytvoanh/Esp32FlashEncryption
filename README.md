@@ -12,6 +12,11 @@ pip install esptool
     python -m esptool --port COM4 read-flash 0 0x400000 flash_contents.bin
 <img width="852" height="258" alt="image" src="https://github.com/user-attachments/assets/d76c8f12-d627-4eba-8ae6-c14daeb3c962" />
 
+use IDF terminal in visual studio code 
+python -m esptool --port COM5 read_flash 0 0x400000 flash_contents.bin
+<img width="938" height="308" alt="image" src="https://github.com/user-attachments/assets/011e48ad-9942-46ed-94c7-56e5c6dfcd1f" />
+
+
 # IDF Extention and arduino core
 <img width="862" height="703" alt="image" src="https://github.com/user-attachments/assets/c6be9444-1b5a-4f97-817a-36791d3bfc4a" />
 <img width="1210" height="644" alt="image" src="https://github.com/user-attachments/assets/43c16a41-9367-48e0-9d3c-7d84d529ef66" />
