@@ -23,6 +23,14 @@ pip install esptool
 # Bootloader Size Issue
 <img width="849" height="544" alt="image" src="https://github.com/user-attachments/assets/75d8f751-a053-4c51-8ab5-045c325c141a" />
 
+# IDF build
+Full Clean: idf.py fullclean
+<img width="753" height="117" alt="image" src="https://github.com/user-attachments/assets/67ffa942-fbfb-4c8f-987e-bfb77abb9f72" />
+Menuconfig: idf.py menuconfig
+<img width="873" height="347" alt="image" src="https://github.com/user-attachments/assets/5d674ea8-8a0b-4b91-b79c-2f11bf67d56e" />
+
+
+
 # Name, Type, SubType, Offset, Size, Flags
 nvs, data, nvs, 0x9000, 0x6000,  # 24 KB
 otadata, data, ota, 0xF000, 0x2000,  # 8 KB
