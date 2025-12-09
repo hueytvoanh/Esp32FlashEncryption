@@ -41,6 +41,12 @@ Set Target Chip \
 <img width="709" height="114" alt="image" src="https://github.com/user-attachments/assets/d94caa7c-f5cb-44ab-8c02-8e53aae0b91b" />
 <img width="685" height="350" alt="image" src="https://github.com/user-attachments/assets/b5566aa7-656d-4b21-8f31-e22b28d33e10" />
 
+Earse Flash in esp32 \
+esptool.py --chip esp32 erase_flash
+<img width="678" height="237" alt="image" src="https://github.com/user-attachments/assets/bef7b74d-5f89-4058-9ccf-4aa82d549353" />
+
+
+
 IDF flash: idf.py flash
 <img width="1243" height="415" alt="image" src="https://github.com/user-attachments/assets/e7c704fd-4cf8-42fa-8ee0-9c70f68d051b" />
 
