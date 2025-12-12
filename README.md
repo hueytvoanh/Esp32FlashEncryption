@@ -65,6 +65,9 @@ app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 Flash size 
 CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
 <img width="1426" height="296" alt="image" src="https://github.com/user-attachments/assets/212715e0-abc7-4b44-bbb3-22a712aacfcb" />
+Flash encryption
+<img width="562" height="227" alt="image" src="https://github.com/user-attachments/assets/27bc1e52-f0ba-428b-b969-dadb3213466b" />
+
 
 
 # Custom partittion csv file to idf project.
