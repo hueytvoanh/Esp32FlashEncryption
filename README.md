@@ -61,6 +61,14 @@ otadata, data, ota, 0xF000, 0x2000,  # 8 KB
 app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 # You can add more partitions below as needed
 
+# Perform flashing with esp32 bin file
+1. Create key file:
+   python -m espsecure.generate_flash_encryption_key flash_enc_key.bin
+2. Encrypt bin file from arduino ide (ie output.bin )
+   python -m espsecure.encrypt_flash --keyfile=flash_enc_key.bin --output=output_encrypted.bin output.bin
+3. Flash encripted bin file to esp32
+   esptool.py --chip esp32 --port COM3 --baud 115200 write_flash 0x1000 output_encrypted.bin
+
 
 
 
