@@ -61,6 +61,11 @@ otadata, data, ota, 0xF000, 0x2000,  # 8 KB
 app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 # You can add more partitions below as needed
 
+# IDF menuconfig
+Flash size 
+<img width="1426" height="296" alt="image" src="https://github.com/user-attachments/assets/212715e0-abc7-4b44-bbb3-22a712aacfcb" />
+
+
 # Custom partittion csv file to idf project.
 1. Update partitions.csv from arduino ide
    <img width="1282" height="444" alt="image" src="https://github.com/user-attachments/assets/a2a9675e-73b2-4285-876a-fef29acb5aa7" />
