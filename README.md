@@ -62,7 +62,10 @@ app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 # You can add more partitions below as needed
 
 # Custom partittion csv file to idf project.
-1. Place your partitions.csv file in your project directory
+1. Update partitions.csv from arduino ide
+   <img width="1282" height="444" alt="image" src="https://github.com/user-attachments/assets/a2a9675e-73b2-4285-876a-fef29acb5aa7" />
+
+2. Place your partitions.csv file in your project directory
    Typically, put it in the root of your project or in a dedicated folder, e.g., components/partition/.
 
 # Perform flashing with esp32 bin file
