@@ -62,11 +62,13 @@ app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 # You can add more partitions below as needed
 
 # IDF menuconfig
-Flash size 
+1. Flash size 
 CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
 <img width="1426" height="296" alt="image" src="https://github.com/user-attachments/assets/212715e0-abc7-4b44-bbb3-22a712aacfcb" />
-Flash encryption
+2. Flash encryption
 <img width="562" height="227" alt="image" src="https://github.com/user-attachments/assets/27bc1e52-f0ba-428b-b969-dadb3213466b" />
+3. Partition Table
+<img width="1476" height="238" alt="image" src="https://github.com/user-attachments/assets/914aeb12-59c6-4e9e-9ed1-a51acfbef3e4" />
 
 
 
