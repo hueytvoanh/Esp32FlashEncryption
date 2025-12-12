@@ -69,6 +69,9 @@ app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 3. Flash encripted bin file to esp32
    esptool.py --chip esp32 --port COM3 --baud 115200 write_flash 0x1000 output_encrypted.bin
 
+<img width="855" height="457" alt="image" src="https://github.com/user-attachments/assets/ecd193d0-a891-4913-90cb-d6b98b993f46" />
+
+
 
 
 
