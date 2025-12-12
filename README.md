@@ -63,6 +63,7 @@ app0, app, factory, 0x10000, 0xD0000,  # 832 KB
 
 # IDF menuconfig
 Flash size 
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
 <img width="1426" height="296" alt="image" src="https://github.com/user-attachments/assets/212715e0-abc7-4b44-bbb3-22a712aacfcb" />
 
 
