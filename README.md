@@ -131,6 +131,12 @@ and write this part only:
 esptool.py -p PORT -b 921600 write_flash --flash_mode dio 0x10000 main_en.bin
 
 # My Steps
+Component Manager
+<img width="1226" height="676" alt="image" src="https://github.com/user-attachments/assets/27606192-51a5-4941-b877-ccac8992c67f" />
+<img width="1167" height="667" alt="image" src="https://github.com/user-attachments/assets/3660d104-e1de-40d4-bcb0-9c78215b62cc" />
+<img width="1493" height="369" alt="image" src="https://github.com/user-attachments/assets/e926e484-b604-4d7e-8f88-f0ee4f1989c5" />
+
+
 1. Open Visual Studio Code 
    <img width="1443" height="615" alt="image" src="https://github.com/user-attachments/assets/265cc8cf-9c91-4a15-b9ba-00da6659b08a" />
 2. Choice "hello_world"
@@ -138,6 +144,8 @@ esptool.py -p PORT -b 921600 write_flash --flash_mode dio 0x10000 main_en.bin
 3. Add Arduino component
    idf.py add-dependency "espressif/arduino-esp32" 
    <img width="1477" height="673" alt="image" src="https://github.com/user-attachments/assets/fc813967-8024-4632-9902-6f02388bf013" />
+   <img width="1182" height="499" alt="image" src="https://github.com/user-attachments/assets/bdc0f84f-bb68-48d5-a71c-5cd4652ae68a" />
+
 4. Run menuconfig by command "idf.py menuconfig"
 
 
