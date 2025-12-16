@@ -146,8 +146,9 @@ Component Manager
    <img width="1477" height="673" alt="image" src="https://github.com/user-attachments/assets/fc813967-8024-4632-9902-6f02388bf013" />
    <img width="1182" height="499" alt="image" src="https://github.com/user-attachments/assets/bdc0f84f-bb68-48d5-a71c-5cd4652ae68a" />
 
-4. Run menuconfig by command "idf.py menuconfig"
-   idf.py create-project-from-example "espressif/arduino-esp32^3.3.3:hello_world"  
+4. Run menuconfig by command "idf.py menuconfig" \
+   idf.py create-project-from-example "espressif/arduino-esp32^3.3.3:hello_world" \
+   cd hello_world \
 
 
 
