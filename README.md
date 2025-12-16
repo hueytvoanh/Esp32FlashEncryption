@@ -108,20 +108,23 @@ otadata, data, ota, 0xe000, 0x2000,
 app0, app, ota_0, 0x10000, 0x140000,
 nvs_key, data, nvs_keys,0x285000,0x1000,
 spiffs, data, spiffs, 0x290000,0x170000,
-5. enabling the encryption and customized partition table by
+
+<img width="827" height="242" alt="image" src="https://github.com/user-attachments/assets/f338714c-ae96-4459-b84c-13d647eefc90" />
+
+6. enabling the encryption and customized partition table by
 idf.py menuconfig
-6. building the projekt by:
+7. building the projekt by:
 idf.py build
-7. copying the built partition-table.bin (from ..\build\partition_table) , the built bootloader.bin (from ..\build\bootloader) and ota_data_initial.bin (from ..\build) to the esptool folder (..\esp-idf\components\esptool_py\esptool)
-8. convert the Arduino sketch to binary by: Arduino IDE-> Sketch-> Export compiled binary (rename it as main.bin)
-9. copying the main.bin to the esptool folder
-10.  creating own key
+8. copying the built partition-table.bin (from ..\build\partition_table) , the built bootloader.bin (from ..\build\bootloader) and ota_data_initial.bin (from ..\build) to the esptool folder (..\esp-idf\components\esptool_py\esptool)
+9. convert the Arduino sketch to binary by: Arduino IDE-> Sketch-> Export compiled binary (rename it as main.bin)
+10. copying the main.bin to the esptool folder
+11.  creating own key
 espsecure.py generate_flash_encryption_key my_flash_encryption_key.bin
-11.  write the key in the module
+12.  write the key in the module
 espefuse.py --port PORT burn_key flash_encryption my_flash_encryption_key.bin
-12. write all the files to the module:
+13. write all the files to the module:
 esptool.py -p PORT -b 921600 --before default_reset --after no_reset --chip esp32 write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 bootloader.bin 0x8000 partition-table.bin 0xe000 ota_data_initial.bin 0x10000 main.bin 0x290000 spiffs.bin
-13. it will encrypt the flash and restart
+14. it will encrypt the flash and restart
 to rewrite the module for development, use the development mode in step 5 and encrypt the main.bin file:
 espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x10000 --output main_en.bin main.bin
 and write this part only:
