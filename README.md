@@ -130,6 +130,15 @@ espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 
 and write this part only:
 esptool.py -p PORT -b 921600 write_flash --flash_mode dio 0x10000 main_en.bin
 
+# My Steps
+1. Open Visual Studio Code 
+   <img width="1443" height="615" alt="image" src="https://github.com/user-attachments/assets/265cc8cf-9c91-4a15-b9ba-00da6659b08a" />
+2. Choice "hello_world"
+   <img width="1709" height="532" alt="image" src="https://github.com/user-attachments/assets/6fb3840b-a6aa-4552-bed8-5da2315b82d1" />
+3. Add Arduino component
+   idf.py add-dependency "espressif/arduino-esp32" 
+   <img width="1477" height="673" alt="image" src="https://github.com/user-attachments/assets/fc813967-8024-4632-9902-6f02388bf013" />
+4. Run menuconfig by command "idf.py menuconfig"
 
 
 
