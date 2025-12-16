@@ -154,4 +154,6 @@ Component Manager
 idf.py efuse-write-protect DISABLE_DL_ENCRYPT \
 <img width="1134" height="479" alt="image" src="https://github.com/user-attachments/assets/2f2dda89-3a31-4c0f-9e86-31ea5fa19ce7" />
 
+Reset board and force Flash \ 
+idf.py flash -p COM5 --force
 
