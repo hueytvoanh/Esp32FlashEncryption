@@ -165,4 +165,15 @@ idf.py flash -p COM5 --force
 # Partition Table
 <img width="690" height="505" alt="image" src="https://github.com/user-attachments/assets/df2a061b-6e27-4658-984b-6f5dbf180b8b" />
 
+# AI Steps
+<img width="689" height="508" alt="image" src="https://github.com/user-attachments/assets/5f0dbd22-4e2d-44fc-91a0-4c8e6520f158" />
+espsecure.py generate_flash_encryption_key flash_encryption_key.bin
+<img width="676" height="442" alt="image" src="https://github.com/user-attachments/assets/5c5cd38f-ff84-4daa-9374-8cc994c42d42" />
+<img width="672" height="555" alt="image" src="https://github.com/user-attachments/assets/27814a9a-24b1-4785-85c2-cbd0072fa085" />
+espsecure.py encrypt_flash_data --keyfile flash_encryption_key.bin --address 0x1000 --output bootloader_encrypted.bin bootloader.bin
+espsecure.py encrypt_flash_data --keyfile flash_encryption_key.bin --address 0x8000 --output partitions_encrypted.bin partitions.bin
+espsecure.py encrypt_flash_data --keyfile flash_encryption_key.bin --address 0x10000 --output sketch_encrypted.bin your_sketch.ino.bin
+<img width="675" height="397" alt="image" src="https://github.com/user-attachments/assets/48ec8c6c-68d6-4d12-a02e-1d35dfd9d0b2" />
+
+
 
