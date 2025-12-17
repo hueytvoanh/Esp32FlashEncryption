@@ -162,3 +162,7 @@ idf.py efuse-write-protect DISABLE_DL_ENCRYPT \
 Reset board and force Flash \ 
 idf.py flash -p COM5 --force
 
+# Partition Table
+<img width="690" height="505" alt="image" src="https://github.com/user-attachments/assets/df2a061b-6e27-4658-984b-6f5dbf180b8b" />
+
+
