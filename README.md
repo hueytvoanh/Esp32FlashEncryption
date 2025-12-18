@@ -168,7 +168,8 @@ idf.py flash -p COM5 --force
 # AI Steps
 <img width="689" height="508" alt="image" src="https://github.com/user-attachments/assets/5f0dbd22-4e2d-44fc-91a0-4c8e6520f158" />  
 
-    espsecure.py generate_flash_encryption_key flash_encryption_key.bin \
+    espsecure.py generate_flash_encryption_key flash_encryption_key.bin 
+    
     
 <img width="676" height="442" alt="image" src="https://github.com/user-attachments/assets/5c5cd38f-ff84-4daa-9374-8cc994c42d42" />
 <img width="672" height="555" alt="image" src="https://github.com/user-attachments/assets/27814a9a-24b1-4785-85c2-cbd0072fa085" />
