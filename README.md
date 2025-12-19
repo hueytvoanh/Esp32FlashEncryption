@@ -165,6 +165,9 @@ idf.py flash -p COM5 --force
 # Partition Table
 <img width="690" height="505" alt="image" src="https://github.com/user-attachments/assets/df2a061b-6e27-4658-984b-6f5dbf180b8b" />
 
+# Youtube Videos
+https://www.youtube.com/watch?v=-qrCiIbh7xM
+
 # AI Steps
 <img width="689" height="508" alt="image" src="https://github.com/user-attachments/assets/5f0dbd22-4e2d-44fc-91a0-4c8e6520f158" />  
 
