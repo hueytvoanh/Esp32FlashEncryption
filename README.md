@@ -51,7 +51,8 @@ esptool.py --chip esp32 erase_flash
 Generate Flash key \
 espsecure.py generate_flash_encryption_key my_flash_encryption_key.bin \
 
-
+Generate encrypted file 
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x10000 --output Esp32RelayControlFull.ino_encrypted.bin Esp32RelayControlFull.ino.bin
 
 IDF flash: idf.py flash
 <img width="1243" height="415" alt="image" src="https://github.com/user-attachments/assets/e7c704fd-4cf8-42fa-8ee0-9c70f68d051b" />
@@ -177,8 +178,8 @@ https://www.youtube.com/watch?v=-qrCiIbh7xM
 # AI Steps
 <img width="689" height="508" alt="image" src="https://github.com/user-attachments/assets/5f0dbd22-4e2d-44fc-91a0-4c8e6520f158" />  
 
-    espsecure.py generate_flash_encryption_key flash_encryption_key.bin 
-    espefuse.py --port COM5 burn_key flash_encryption flash_encryption_key.bin --force-write-always
+    espsecure.py generate_flash_encryption_key my_flash_encryption_key.bin 
+    espefuse.py --port COM5 burn_key flash_encryption my_flash_encryption_key.bin --force-write-always
 
     
     
