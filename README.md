@@ -197,7 +197,7 @@ espefuse.py -p COM5 burn_efuse FLASH_CRYPT_CNT 0xF \
 idf.py fullclean \
 idf.py menuconfig - disable Flash encryption \
 idf.py build \
-idf.py flash \
+idf.py flash 
 
 [byte[]]$zeros = 0..31
 [IO.File]::WriteAllBytes("C:\Users\DTToan\esp\hello_world\zero_flash_key.bin", $zeros)
