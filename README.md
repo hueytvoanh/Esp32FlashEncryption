@@ -48,6 +48,9 @@ Earse Flash in esp32 \
 esptool.py --chip esp32 erase_flash
 <img width="678" height="237" alt="image" src="https://github.com/user-attachments/assets/bef7b74d-5f89-4058-9ccf-4aa82d549353" />
 
+Generate Flash key \
+espsecure.py generate_flash_encryption_key my_flash_encryption_key.bin \
+
 
 
 IDF flash: idf.py flash
