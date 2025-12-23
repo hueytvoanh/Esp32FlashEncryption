@@ -193,11 +193,11 @@ https://www.youtube.com/watch?v=-qrCiIbh7xM
 <img width="675" height="397" alt="image" src="https://github.com/user-attachments/assets/48ec8c6c-68d6-4d12-a02e-1d35dfd9d0b2" />
 
 # Deactive Flash Encryption
-espefuse.py -p COM5 burn_efuse FLASH_CRYPT_CNT 0xF
-idf.py fullclean
-idf.py menuconfig - disable Flash encryption
-idf.py build
-idf.py flash
+espefuse.py -p COM5 burn_efuse FLASH_CRYPT_CNT 0xF \
+idf.py fullclean \
+idf.py menuconfig - disable Flash encryption \
+idf.py build \
+idf.py flash \
 
 [byte[]]$zeros = 0..31
 [IO.File]::WriteAllBytes("C:\Users\DTToan\esp\hello_world\zero_flash_key.bin", $zeros)
