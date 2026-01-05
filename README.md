@@ -194,6 +194,8 @@ https://www.youtube.com/watch?v=-qrCiIbh7xM
 
 # Deactive Flash Encryption
 espefuse.py -p COM5 burn_efuse FLASH_CRYPT_CNT 0xF \
+Burn FLASH_CRYPT_CNT : even digit "1" \
+espefuse.py -p COM5 burn_efuse FLASH_CRYPT_CNT 0b0111111 \
 idf.py fullclean \
 idf.py menuconfig - disable Flash encryption \
 idf.py build \
@@ -202,5 +204,15 @@ idf.py flash
 [byte[]]$zeros = 0..31
 [IO.File]::WriteAllBytes("C:\Users\DTToan\esp\hello_world\zero_flash_key.bin", $zeros)
 
-espefuse.py -p COM5 burn_key flash_encryption zero_flash_key.bin --force-write
+# Test 
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x1000 --output build\bootloader\bootloader_en.bin build\bootloader\bootloader.bin
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x8000 --output build\partition_table\partition-table_en.bin build\partition_table\partition-table.bin
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0xe000 --output build\ota_data_initial_en.bin build\ota_data_initial.bin
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x10000 --output build\hello_world_en.bin build\hello_world.bin
+
+espefuse.py --port COM5 burn_key flash_encryption my_flash_encryption_key.bin --force-write-always
+
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin
+
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader_en.bin 0x8000 build\partition_table\partition-table_en.bin 0xe000 build\ota_data_initial_en.bin 0x10000 build\hello_world_en.bin
 
