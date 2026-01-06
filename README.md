@@ -229,3 +229,9 @@ espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.b
 
 esptool.py --chip esp32 -p COM5 -b 460800 --before=default_reset --after=no_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB  --encrypt 0x10000 hello_world.bin
 
+# Refer
+https://github.com/espressif/arduino-esp32/issues/5645 \
+https://www.reddit.com/r/esp32/comments/1lp9n6r/esp32c3_flash_encryption_only_works_the_first/ \
+<img width="733" height="441" alt="image" src="https://github.com/user-attachments/assets/b2e2590e-d25d-46d9-9fca-2fce795ea6b6" />
+
+
