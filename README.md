@@ -1,3 +1,6 @@
+# Reading Flash via UART
+python -m esptool --port COM5 read_flash 0 0x400000 flash_contents.bin 
+
 # Esp32FlashEncryption
 <img width="842" height="473" alt="image" src="https://github.com/user-attachments/assets/8ccb495d-a73e-4c07-b8dc-0d2b9d813307" />
 <img width="851" height="254" alt="image" src="https://github.com/user-attachments/assets/099f5f44-b1fe-4801-bc45-59294ca4812c" />
@@ -217,6 +220,9 @@ espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.b
 
  # 1 idf.py flash
  # 2 Flash with flag --encrypt
+ Git bash dd if=/dev/zero of=example_flash_encryption_key.bin bs=1 count=32 \
+ espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.bin 
+ 
  python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m --encrypt 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin \
  # 3
  python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader_en.bin 0x8000 build\partition_table\partition-table_en.bin 0xe000 build\ota_data_initial_en.bin 0x10000 build\hello_world_en.bin \
