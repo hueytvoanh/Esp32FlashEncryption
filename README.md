@@ -205,14 +205,21 @@ idf.py flash
 [IO.File]::WriteAllBytes("C:\Users\DTToan\esp\hello_world\zero_flash_key.bin", $zeros)
 
 # Test 
-espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x1000 --output build\bootloader\bootloader_en.bin build\bootloader\bootloader.bin
-espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x8000 --output build\partition_table\partition-table_en.bin build\partition_table\partition-table.bin
-espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0xe000 --output build\ota_data_initial_en.bin build\ota_data_initial.bin
-espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x10000 --output build\hello_world_en.bin build\hello_world.bin
+espsecure.py generate_flash_encryption_key my_flash_encryption_key.bin \
+espefuse.py -p COM5 burn_efuse FLASH_CRYPT_CNT 0b0000001 \
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x1000 --output build\bootloader\bootloader_en.bin build\bootloader\bootloader.bin \
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x8000 --output build\partition_table\partition-table_en.bin build\partition_table\partition-table.bin \
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0xe000 --output build\ota_data_initial_en.bin build\ota_data_initial.bin \
+espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 0x10000 --output build\hello_world_en.bin build\hello_world.bin \
 
-espefuse.py --port COM5 burn_key flash_encryption my_flash_encryption_key.bin --force-write-always
+espefuse.py --port COM5 burn_key flash_encryption my_flash_encryption_key.bin --force-write-always \
+espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.bin \
 
- python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin
+ # 1 idf.py flash
+ # 2 Flash with flag --encrypt
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m --encrypt 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin \
+ # 3
+ python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader_en.bin 0x8000 build\partition_table\partition-table_en.bin 0xe000 build\ota_data_initial_en.bin 0x10000 build\hello_world_en.bin \
 
- python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader_en.bin 0x8000 build\partition_table\partition-table_en.bin 0xe000 build\ota_data_initial_en.bin 0x10000 build\hello_world_en.bin
+esptool.py --chip esp32 -p COM5 -b 460800 --before=default_reset --after=no_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB  --encrypt 0x10000 hello_world.bin
 
