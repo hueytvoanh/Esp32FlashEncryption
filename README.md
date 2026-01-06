@@ -218,17 +218,15 @@ espsecure.py encrypt_flash_data --keyfile my_flash_encryption_key.bin --address 
 espefuse.py --port COM5 burn_key flash_encryption my_flash_encryption_key.bin --force-write-always \
 espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.bin \
 
- # 1 idf.py flash
- # 2 Flash with flag --encrypt
- Git bash dd if=/dev/zero of=example_flash_encryption_key.bin bs=1 count=32 \
- espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.bin 
- 
- python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m --encrypt 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin \
- # 3
- python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m 0x1000 build\bootloader\bootloader_en.bin 0x8000 build\partition_table\partition-table_en.bin 0xe000 build\ota_data_initial_en.bin 0x10000 build\hello_world_en.bin \
-
-esptool.py --chip esp32 -p COM5 -b 460800 --before=default_reset --after=no_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB  --encrypt 0x10000 hello_world.bin
-
+# Development Mode
+    1. idf.py menuconfig activate Flash encryption, Log mode, Flash size
+    2. idf.py build
+    3. idf.py flash
+    4. Re-Flash with flag --encrypt        
+        python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m --encrypt 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin
+        
+        Git bash dd if=/dev/zero of=example_flash_encryption_key.bin bs=1 count=32 \
+        espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.bin 
 # Refer
 https://github.com/espressif/arduino-esp32/issues/5645 \
 https://www.reddit.com/r/esp32/comments/1lp9n6r/esp32c3_flash_encryption_only_works_the_first/ \
