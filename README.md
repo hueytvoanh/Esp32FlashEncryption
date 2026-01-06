@@ -224,7 +224,8 @@ espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.b
     3. idf.py flash
     4. Re-Flash with flag --encrypt        
         python -m esptool --chip esp32 -b 460800 --before default_reset --after no_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 40m --encrypt 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xe000 build\ota_data_initial.bin 0x10000 build\hello_world.bin
-        
+    5. Work with binary file from Arduino: copy file from arduino build folder to idf project folder and use command from step 4 to flash
+    
         Git bash dd if=/dev/zero of=example_flash_encryption_key.bin bs=1 count=32 \
         espefuse.py --port COM5 burn_key flash_encryption example_flash_encryption_key.bin 
 # Refer
